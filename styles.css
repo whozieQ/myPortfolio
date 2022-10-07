@@ -1,3 +1,27 @@
+/* CSS HEX */
+/* --black: #000000ff;
+--color-altLight: #6683AEff;
+--black-2: #000000ff;
+--color-light: #EFEEEEff;
+--color-dark: #5D1649ff;
+--color-accent: #A21E87ff;
+
+/* SCSS RGB */
+/* $black: rgba(0, 0, 0, 1);
+$tyrian-purple: rgba(93, 22, 73, 1);
+$violet-crayola: rgba(162, 30, 135, 1);
+$glaucous: rgba(102, 131, 174, 1);
+$cultured: rgba(239, 238, 238, 1);
+$black-2: rgba(0, 0, 0, 1); 
+
+    --color-light: #FFFFC7;
+    --color-dark: #473335;
+    --color-accent: #548687;
+    --color-altDark:#B0413E;
+    --color-altLight: #FCAA67;
+*/ 
+
+
 
 * {
     box-sizing: border-box;
@@ -8,11 +32,11 @@
     --fw-reg: 300;
     --fw-bold: 900;
 
-    --color-light: #FFFFC7;
-    --color-dark: #473335;
-    --color-accent: #548687;
-    --color-altDark:#B0413E;
-    --color-altLight: #FCAA67;
+    --color-light: #EFEEEEff;
+    --color-dark: #5D1649ff;
+    --color-altLight: #A21E87ff;
+    --color-altDark: #473335;
+    --color-accent: #6683AEff;
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -25,7 +49,7 @@
 
 }
 
-/* large element layout */
+/* major container element layout */
 header{
     display: flex;
     justify-content: space-between;
@@ -42,7 +66,9 @@ body{
 
 }
 section{
-    padding: 2em 1em;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 nav{
@@ -69,6 +95,7 @@ img{
     padding: 3em;
     text-align: center;
 }
+
 .btn{
     background-color: var(--color-accent);
     color: var(--color-light);
@@ -87,36 +114,34 @@ img{
     transform: scale(1.1);
 }
 
-.aboutme{
-    margin: 0 auto;
-    max-width: 1000px;
-}
 
-
-
+/* nav section */
 .nav-toggle{
     border: none;
     padding: 1em 2em;
     font-size: var(--fs-h3);
-}
-.logo img{
-    object-fit: cover;
-    width: 200px;
-}
-.intro__img,
-.about__img{
-    box-shadow: var(--boxshad);
-}
-.subtitle{
-    margin-bottom: 1em;
 }
 .nav-toggle,
 .hamburger{
     background: var(--color-light);
     cursor: pointer;
 }
+.logo img{
+    object-fit: cover;
+    width: 200px;
+}
 
+/* intro section */
+.intro__img,
+.about__img{
+    box-shadow: var(--boxshad);
+}
 
+.subtitle{
+    margin-bottom: 1em;
+}
+
+/* services section */
 .services__title{
     color: var(--color-accent);
     font-weight: var(--fw-bold);
@@ -144,6 +169,49 @@ img{
 .service{
     margin-bottom: 2em;
 }
+
+/* about me section */
+.aboutme{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+}
+
+/* portfolio section */
+.work{
+    background: var(--color-dark);
+    color: var(--color-accent);
+    text-align: center;
+}
+.work__subtitle{
+    text-transform: capitalize;
+    color: var(--color-light);
+}
+.portfolio__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    overflow: hidden;
+}
+.portfolio{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
+}
+.portfolio__item{
+    width: 300px;
+    height: 300px;
+    background: var(--color-altDark);
+}
+.portfolio__img:hover,
+.portfolio__item:focus{
+    opacity: .5;
+}
+
+/* footer */
+
+
 /* typography */
 h1,
 h2,
@@ -173,6 +241,10 @@ strong{
     padding: .25em 1em;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+.about__subtitle,
+.work__subtitle{
+    text-transform: none;
 }
 
 /* Media Queries */
@@ -204,7 +276,38 @@ strong{
     }
     .aboutme{
         display: grid;
-        grid-template-columns: 1fr 200px;
+        grid-template-columns: 1fr 200px ;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "body img";
+        /* width: min-content; */
+        position: relative;
+    }
+    .about__subtitle{
+        grid-area: subtitle;
+        align-self: start;
+        grid-column: 1 / -1;
+        width: calc(100% + 1em);
+        padding-left: 1em;
+        padding-right: calc(200px + 1em);
+        position: relative;
+        left: -1em;
+        z-index: -1;
+    }
+    .aboutme img{
+        grid-area: img;
+        position: relative;
+        left: -2em;
+    }
+    .about__body{
+        grid-area: body;
+    }
+    .about__description{
+        margin: auto 4em 1em 0;
+    }
+    .about__description:last-child{
+        margin-bottom: 0;
     }
 }
 
