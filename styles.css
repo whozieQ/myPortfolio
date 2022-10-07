@@ -1,1 +1,227 @@
-/* font-family: 'Inter', sans-serif; */
+
+* {
+    box-sizing: border-box;
+}
+:root{
+    --ff-primary: 'Inter', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --color-light: #FFFFC7;
+    --color-dark: #473335;
+    --color-accent: #548687;
+    --color-altDark:#B0413E;
+    --color-altLight: #FCAA67;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+
+    --boxshad: .25em .25em .75em rgba(0,0,0,.25),
+               .125em .125em .25em rgba(0,0,0,.15);
+
+}
+
+/* large element layout */
+header{
+    display: flex;
+    justify-content: space-between;
+    max-height: 150px;
+}
+body{
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    background: var(--color-light);
+    color: var(--color-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+
+}
+section{
+    padding: 2em 1em;
+}
+
+nav{
+    display: none;
+}
+
+:focus{
+    outline: 3px solid var(--color-altDark);
+    outline-offset: 3px;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.services{
+    background-color:var(--color-dark);
+    color: var(--color-light);
+    background-image: url(img/whozielogo-glasses.png);
+    background-image: url(https://images.unsplash.com/photo-1656414422831-e8ca6ef045b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode:darken;
+    padding: 3em;
+    text-align: center;
+}
+.btn{
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    padding: .75em 1.75em;
+    text-decoration: none;
+    font-weight: var(--fw-bold);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 200ms ease-in-out;
+    display: inline-block;
+    margin: 2em;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.aboutme{
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+
+
+.nav-toggle{
+    border: none;
+    padding: 1em 2em;
+    font-size: var(--fs-h3);
+}
+.logo img{
+    object-fit: cover;
+    width: 200px;
+}
+.intro__img,
+.about__img{
+    box-shadow: var(--boxshad);
+}
+.subtitle{
+    margin-bottom: 1em;
+}
+.nav-toggle,
+.hamburger{
+    background: var(--color-light);
+    cursor: pointer;
+}
+
+
+.services__title{
+    color: var(--color-accent);
+    font-weight: var(--fw-bold);
+    position: relative;
+}
+.services__title::after{
+    content: '';
+    display: block;
+    width: 3em;
+    height: 1px;
+    margin: 0.5em auto 1em auto;
+    background: var(--color-light);
+    opacity: .3;
+}
+.service__name{
+    font-size: var(--fs-body);
+    letter-spacing: 1px;
+    font-weight: var(--fw-bold);
+    margin-bottom: .5em;
+}
+.service__description{
+    font-weight: var(--fw-reg);
+    opacity: .7;
+}
+.service{
+    margin-bottom: 2em;
+}
+/* typography */
+h1,
+h2,
+h3{
+    line-height: 1.1;
+    margin: 0;
+}
+h1{  font-size: var(--fs-h1);  }
+h2{  font-size: var(--fs-h2);  }
+h3{  font-size: var(--fs-h3);  }
+
+p{
+    margin: 0;
+}
+strong{
+    font-weight: var(--fw-bold);
+}
+.title{
+    font-size: var(--fs-h2);
+    margin-bottom: .25em;
+    font-weight: var(--fw-reg) ;
+}
+.subtitle{
+    font-size: var(--fs-h3);
+    background-color: var(--color-accent);
+    font-family: var(--ff-secondary);
+    padding: .25em 1em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Media Queries */
+@media(min-width: 600px){
+    .intro{
+        width: min-content;
+        margin: 0 auto;
+        display: grid;
+        grid-template-areas: 
+        "img title"
+        "img subtitle";
+        grid-template-columns: min-content max-content;
+        grid-column-gap: 1em;
+    }
+    .intro img{
+        grid-area: img;
+        min-width: 200px;
+        object-fit: cover;
+        max-height: 225px;
+    }
+    .intro__subtitle{
+        grid-area: subtitle;
+        text-align: right;
+        align-self: start;
+        grid-column: -1 / 1;
+        position: relative;
+        left: -2em;
+        z-index: -1;
+    }
+    .aboutme{
+        display: grid;
+        grid-template-columns: 1fr 200px;
+    }
+}
+
+@media(min-width: 800px){
+    :root{
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+    .services__list{
+        display: grid;
+        grid-template-columns:  1fr 1fr 1fr;
+        gap: 2em;
+    }
+    .service{
+        text-align: left;
+    }
+    
+}
