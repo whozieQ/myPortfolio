@@ -50,10 +50,15 @@ $black-2: rgba(0, 0, 0, 1);
 }
 
 /* major container element layout */
+html{
+    scroll-behavior: smooth;
+}
 header{
     display: flex;
     justify-content: space-between;
-    max-height: 150px;
+    max-height: 125px;
+    padding: 1em;
+    border-bottom:1px solid var(--color-dark);
 }
 body{
     font-family: var(--ff-primary);
@@ -66,34 +71,14 @@ body{
 
 }
 section{
-    padding: 2rem 1rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-nav{
-    display: none;
-}
-
-:focus{
-    outline: 3px solid var(--color-altDark);
-    outline-offset: 3px;
+    padding: 4rem 2rem;
+    /* margin-top: 2rem; */
+    /* margin-bottom: 3rem; */
 }
 
 img{
     max-width: 100%;
     max-height: 100%;
-}
-.services{
-    background-color:var(--color-dark);
-    color: var(--color-light);
-    background-image: url(img/whozielogo-glasses.png);
-    background-image: url(https://images.unsplash.com/photo-1656414422831-e8ca6ef045b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80);
-    background-size: cover;
-    background-position: center;
-    background-blend-mode:darken;
-    padding: 3em;
-    text-align: center;
 }
 
 .btn{
@@ -113,18 +98,78 @@ img{
 .btn:hover {
     transform: scale(1.1);
 }
+.btn:focus,
+.portfolio__item:focus{
+    outline: 3px solid var(--color-altDark);
+    outline-offset: 3px;
+}
 
 
 /* nav section */
+nav{
+    position: fixed;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    transform: translateX(100%);
+    transition: transform 250ms ease-in-out;
+}
+.nav-open .nav{
+    transform: translateX(0%);
+}
+
+.nav__list{
+    display: flex;
+    list-style: none;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.nav__link{
+    color: inherit;
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+}
+.nav__link:hover,
+.nav__link:focus{
+    opacity: .7;
+}
+
 .nav-toggle{
     border: none;
-    padding: 1em 2em;
+    position: relative;
+    right: 1em;
+    top: 0;
+    padding: 1em 1.15em;
     font-size: var(--fs-h3);
+    cursor: pointer;
+    z-index: 1000;
 }
 .nav-toggle,
 .hamburger{
     background: var(--color-light);
     cursor: pointer;
+}
+.hamburger:hover,
+.hamburger:focus,
+.nav-toggle:focus{
+    color: var(--color-altLight);
+    /* outline: none; */
+}
+.nav-open .nav-toggle{
+    position: fixed;
+    top: 1em;
+    right: 1.8em;
+    border-radius: 50%;
 }
 .logo img{
     object-fit: cover;
@@ -135,13 +180,27 @@ img{
 .intro__img,
 .about__img{
     box-shadow: var(--boxshad);
+    width: 50vw;
+    margin-left: 25%;
+    margin-right: 25%;
 }
-
 .subtitle{
     margin-bottom: 1em;
 }
 
 /* services section */
+.services{
+    background-color:var(--color-dark);
+    color: var(--color-light);
+    background-image: url(img/whozielogo-glasses.png);
+    background-image: url(https://images.unsplash.com/photo-1656414422831-e8ca6ef045b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode:darken;
+    padding: 3em;
+    text-align: center;
+
+}
 .services__title{
     color: var(--color-accent);
     font-weight: var(--fw-bold);
@@ -176,6 +235,12 @@ img{
     margin-right: auto;
     max-width: 1000px;
 }
+.about__subtitle{
+    margin-top: 1rem;
+}
+.about__body{
+    padding: 0 1em 1em 2em;
+}
 
 /* portfolio section */
 .work{
@@ -186,6 +251,8 @@ img{
 .work__subtitle{
     text-transform: capitalize;
     color: var(--color-light);
+    /* width: 40%; */
+    margin: .75em auto 2em auto;
 }
 .portfolio__img{
     width: 100%;
@@ -198,6 +265,7 @@ img{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1em;
+    justify-items: center;
 }
 .portfolio__item{
     width: 300px;
@@ -210,7 +278,37 @@ img{
 }
 
 /* footer */
-
+footer{
+    background-color: #111;
+    color: var(--color-accent);
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);
+}
+.social__list{
+    width: 50%;
+    max-width: 600px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5em auto;
+    padding: 0;
+}
+.social__item{
+    margin: 0 .5em;
+}
+footer a,
+.footer__link{
+    color: inherit;
+    text-decoration: none;
+}
+.fa-brands:hover,
+.footer__link:hover{
+    opacity: .7;
+}
+.fa-brands{
+    color: inherit;
+}
 
 /* typography */
 h1,
@@ -259,12 +357,17 @@ strong{
         grid-template-columns: min-content max-content;
         grid-column-gap: 1em;
     }
-    .intro img{
+    .intro__img{
         grid-area: img;
         min-width: 200px;
         object-fit: cover;
         max-height: 225px;
+        margin: 0;
     }
+    .intro__title{
+        margin-left: 2rem;
+    }
+    
     .intro__subtitle{
         grid-area: subtitle;
         text-align: right;
@@ -318,13 +421,76 @@ strong{
         --fs-h3: 1.5rem;
         --fs-body: 1.125rem;
     }
+    .intro__img{
+        align-self: end;
+    }
     .services__list{
-        display: grid;
-        grid-template-columns:  1fr 1fr 1fr;
+        /* width: 75%; */
+        margin: 0 auto;
+        display: flex;
+        /* align-items: center; */
+        /* justify-content: space-around; */
+        max-width: 1000px;
         gap: 2em;
     }
     .service{
         text-align: left;
     }
+    .work__subtitle{
+        width: calc(100%-6rem);
+        max-width: 800px;
+        margin: .75em auto 2em auto;
+    }
+    .work{
+        padding-bottom: 8rem;
+    }
+    .portfolio{
+        padding-top: 3rem;
+    }
+    .portfolio-item__individual{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "keys highlights"
+        "img img"
+        "link .";
+    }
     
+    
+}
+@media (min-width: 1200px) {
+    .intro, 
+    .services,
+    .aboutme,
+    .work{
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+}
+.portfolio-item__individual{
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.portfolio-item__individual p{
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+aside{
+    margin-left: 1em;
+    margin-bottom: 1em;
+    font-size: small;
+}
+.img__wide{
+    /* height: 100%; */
+    margin: 4rem auto;
+    grid-area: img;
+}
+#projectLink{
+    margin-top: 3rem;
+    grid-area: link;
+}
+.portfolio-item__keys{
+    grid-area: keys;
 }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Susan Briggs - FrontEnd Dev Portfolio</title>
+        <meta name="author" content="Susan Briggs">
+        <meta name="description" content="FrontEnd Dev Portfolio for Susan Briggs">
+        <meta name="keywords" content="JavaScript, Scrimba, HTML, Portfolio, FrontendDev, CSS">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" 
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" /> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="logo">
+                <img src="img/whozielogo-glasses-transparent.png">
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"><i class="fa-solid fa-bars"></i></i></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#mywork" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <!-- Introduction -->
+        <section class="intro" id="portfolioItem">
+            <h1 class="intro__title title">The title <br><strong>of my project</strong></h1>
+            <p class="intro__subtitle subtitle">A short subtitle</p>
+            <img class="intro__img" src="#" alt="">
+        </section>
+        <main class="portfolio-item__individual">
+            <div class="portfolio-item__keys">
+                <h3>Key skills</h3>
+                <ul id="summary"></ul>
+            </div>
+            <img class="img__wide" src="#">
+            <p id="keyPoints">description</p>
+            <a id="projectLink" class="btn" href="" target="_blank">View this project</a>
+        </main>
+        <aside>
+            <p>Thanks to <a href="https://netlify.com" target="_blank">Netflify</a> for providing hosting and to <a href="https://scrimba.com" target="_blank">Scrimba</a> for the Frontend Dev Career Path course.</p>
+        </aside>
+
+
+
+        <footer>
+            <a href="mailto:whozieq@gmail.com" class="footer__link">whozieq@gmail.com</a>
+            <ul class="social__list">
+                <li class="social__item"><a class="social_link" href="https://github.com/whozieQ" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                <li class="social__item"><a class="social_link" href="https://twitter.com/whozieQ" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                <li class="social__item"><a class="social_link" href="https://discord.com/users/506240995298639872" target="_blank"><i class="fa-brands fa-discord"></i></a></li>
+                <li class="social__item"><a class="social_link" href="https://codepen.io/whozieq" target="_blank"><i class="fa-brands fa-codepen"></i></a></li>
+            </ul>
+        </footer>
+        <script src="https://kit.fontawesome.com/026c4dd97c.js" crossorigin="anonymous"></script>
+        <script src="index.js"></script>
+        <script src="portfolio-item.js"></script>
+    </body>
+
+</html>
