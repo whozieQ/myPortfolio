@@ -2,7 +2,7 @@ const projectList = [
     {
         portfolioId : "1",
         title: "Movie Watchlist",
-        tagline: "async API fetch",
+        tagline: "most recent",
         keyPoints: "async funtions, making REST calls, leveraging local storage, icons, bubbling events",
         description: `My 10th solo project (2 months into training), the movie database API required 2 async (REST) function calls in order to retrieve a list of movies
         and get details about each movie. Managing the async nature of this sequence of calls was the biggest challenge. 
