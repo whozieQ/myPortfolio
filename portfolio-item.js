@@ -4,7 +4,7 @@ const projectList = [
         title: "Movie Watchlist",
         tagline: "async API fetch",
         keyPoints: "async funtions, making REST calls, leveraging local storage, icons, bubbling events",
-        description: `The movie database API required 2 async (REST) function calls in order to retrieve a list of movies
+        description: `My 10th solo project (2 months into training), the movie database API required 2 async (REST) function calls in order to retrieve a list of movies
         and get details about each movie. Managing the async nature of this sequence of calls was the biggest challenge. 
         Satisfying, but not quite as tough was working out how to style the various movie data components (and account for
         sometimes missing data) in a repeating series of movie entries. And of course, storing and retrieving the movie
@@ -30,9 +30,9 @@ const projectList = [
     {
         portfolioId : "3", 
         title: "TinDogs",
-        tagline: "positioning",
-        keyPoints: "forced positions, event listeners, using timers, leveraging a data file, iterating arrays, class constructors",
-        description: `This mock "Tinder" for dogs introduced using custom positioning attributes for placing the reaction stamps over 
+        tagline: "Next-level Javascript",
+        keyPoints: "event listeners, using timers, leveraging a data file, array methods, class constructors, arrow functions",
+        description: `My 8th solo project, this mock "Tinder" for dogs followed a module heavy on arrays and array methods. It introduced using custom positioning attributes for placing the reaction stamps over 
         the dog pictures as well as forcing text to appear on top of the images. This was also my first use of clickable icons. Iterating through an array and displaying array contents
         is also a pretty new skill at this point.`,
         image1: "img/portfolio3.jpg",
@@ -43,23 +43,24 @@ const projectList = [
     {
         portfolioId : "4", 
         title: "Hometown Homepage",
-        tagline: "flexbox",
-        keyPoints: "color palettes, styling images, flexbox",
-        description: `Entirely CSS focused. This project got us introduced to flexbox as we played with several
+        tagline: "CSS & HTML basics",
+        keyPoints: "color palettes, styling images, flexbox, classes, background images",
+        description: `My 1st solo project concluded a module introducing all of the web dev basics in CSS and HTML. Entirely CSS focused, this project got us introduced to flexbox as we played with several
         sections each laid out differently. A secondary focus was on choosing color palettes and introducing gradients.`,
         image1: "img/portfolio4.jpg",
-        link: "https://whozq-tindog.netlify.app/"
+        link: "https://whozq-favoriteplaces.netlify.app"
 
     },
     {
         portfolioId : "5", 
         title: "Unit Converter",
-        tagline: "calculations",
-        keyPoints: "template strings, calculations, formatting and layout, input",
-        description: `A very simple unit converter introduces event listeners, accepting input and dynamically displaying new content 
-        as a result of an event (button click)`,
+        tagline: "javascript intro",
+        keyPoints: "beginning javascript, template strings, calculations, accepting input, handling button clicks",
+        description: `My 4th solo project leveraged techniques for beginning to make websites interactive. A very simple 
+        unit converter introduces event listeners, accepting input and dynamically displaying new content 
+        as a result of an event (button click). This project was all about what it *does* and not about how it looks.`,
         image1: "img/portfolio5.jpg",
-        link: "https://whozq-tindog.netlify.app/"
+        link: "https://whozieq.github.io/UnitConverter/"
 
     },
     {
