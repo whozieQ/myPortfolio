@@ -25,3 +25,10 @@ navLinks.addEventListener("click",(e)=>{
 logoImg.addEventListener("click",(e)=>{
    logoAside.classList.toggle("aside-open")
 })
+
+const imgHTML = `<img class="about__img" src="img/susan1.jpg" alt="">`
+const aboutImg = document.getElementsByClassName("about__img")[0]
+const firstDescPara = document.getElementsByClassName("about__description")[0]
+//on small screens put the img after the 1st about__description paragraph
+//on larger screens put the img after the entire about__body
+firstDescPara.parentNode.insertBefore(aboutImg,firstDescPara.nextSibling)

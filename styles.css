@@ -99,7 +99,7 @@ aside{
     position: fixed;
     top: 125px;
     left: 1rem;
-    width: 40vw;
+    width: 80vw;
     background-color: var(--color-altLight);
     color: var(--color-light);
     padding: 2rem;
@@ -122,7 +122,7 @@ nav{
     color: var(--color-light);
     top: 0;
     bottom: 0;
-    left: 75%;
+    left: 0;
     right: 0;
     z-index: 100;
 
@@ -349,10 +349,41 @@ strong{
 .work__subtitle{
     text-transform: none;
 }
+.portfolio-item__individual{
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.portfolio-item__individual p{
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+aside{
+    margin-left: 1em;
+    margin-bottom: 1em;
+    font-size: small;
+}
+.img__wide{
+    /* height: 100%; */
+    margin: 4rem auto;
+    grid-area: img;
+}
+#projectLink{
+    margin-top: 3rem;
+    grid-area: link;
+}
+.portfolio-item__keys{
+    grid-area: keys;
+}
+
 
 /* Media Queries */
 @media(min-width: 600px){
-    .intro{
+    nav{
+        left: 75%;
+    }
+        .intro{
         width: min-content;
         margin: 0 auto;
         display: grid;
@@ -430,12 +461,8 @@ strong{
         align-self: end;
     }
     .services__list{
-        /* width: 75%; */
         margin: 0 auto;
         display: grid;
-        /* align-items: center; */
-        /* justify-content: space-around; */
-        /* max-width: 1000px; */
         gap: 2em;
     }
     .service{
@@ -460,8 +487,9 @@ strong{
         "img img"
         "link .";
     }
-    
-    
+    aside{
+        width: 60vw;
+    }    
 }
 @media (min-width: 1200px) {
     .intro, 
@@ -475,7 +503,6 @@ strong{
         min-height: 100vh;
     }
     .services__list{
-        /* grid-template-columns: repeat(10, 1fr); */
         grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
     }
     #service-1{
@@ -493,33 +520,11 @@ strong{
  
     }
     .work, .aboutme{
-        height: 100vh;
+        min-height: 100vh;
     }
-}
-.portfolio-item__individual{
-    padding: 0 2em 2em;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-.portfolio-item__individual p{
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-}
-aside{
-    margin-left: 1em;
-    margin-bottom: 1em;
-    font-size: small;
-}
-.img__wide{
-    /* height: 100%; */
-    margin: 4rem auto;
-    grid-area: img;
-}
-#projectLink{
-    margin-top: 3rem;
-    grid-area: link;
-}
-.portfolio-item__keys{
-    grid-area: keys;
+    aside{
+        width: 40vw;
+        transform: translateY(-100vh);
+        transition: transform 250ms ease-in-out;
+    }    
 }
