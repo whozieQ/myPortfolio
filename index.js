@@ -3,6 +3,8 @@ const navLinks = document.getElementsByTagName("nav")[0]
 const logoImg = document.getElementById("logo__img")
 const logoAside = document.getElementsByTagName("aside")[0]
 
+setDisplayedImage()
+
 document.body.addEventListener("click",(e)=>{
     if (!e.target.classList.contains("nav-toggle") &&
         !e.target.classList.contains("fa-bars")){
@@ -26,9 +28,34 @@ logoImg.addEventListener("click",(e)=>{
    logoAside.classList.toggle("aside-open")
 })
 
-const imgHTML = `<img class="about__img" src="img/susan1.jpg" alt="">`
-const aboutImg = document.getElementsByClassName("about__img")[0]
-const firstDescPara = document.getElementsByClassName("about__description")[0]
-//on small screens put the img after the 1st about__description paragraph
-//on larger screens put the img after the entire about__body
-firstDescPara.parentNode.insertBefore(aboutImg,firstDescPara.nextSibling)
+function setDisplayedImage(){
+    console.log(window.innerWidth)
+    // alert(window.innerWidth.toString())
+    if (window.innerWidth > 600){
+        console.log("big")
+        const aboutImg = document.getElementsByClassName("bigScreen")[0]
+        aboutImg.classList.remove("hide")
+        aboutImg.classList.add("display")
+        const aboutImg2= document.getElementsByClassName("smallScreen")[0]
+        aboutImg2.classList.remove("display")
+        aboutImg2.classList.add("hide")
+    } else {
+        console.log("small")
+        const aboutImg = document.getElementsByClassName("smallScreen")[0]
+        aboutImg.classList.remove("hide")
+        aboutImg.classList.add("display")
+        const aboutImg2 = document.getElementsByClassName("bigScreen")[0]
+        aboutImg2.classList.remove("display")
+        aboutImg2.classList.add("hide")
+    }
+}
+
+let timeout = false // holder for timeout id
+
+// window.resize event listener
+window.addEventListener('resize', function() {
+  // clear the timeout
+  clearTimeout(timeout);
+  // start timing for event "completion"
+  timeout = setTimeout(setDisplayedImage, 500);
+});

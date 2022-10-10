@@ -70,6 +70,12 @@ img{
     max-height: 100%;
 }
 
+.hide{
+    display: none;
+}
+.display{
+    display: block;
+}
 .btn{
     background-color: var(--color-accent);
     color: var(--color-light);
@@ -182,8 +188,7 @@ nav{
 }
 
 /* intro section */
-.intro__img,
-.about__img{
+.intro__img{
     box-shadow: var(--boxshad);
     width: 50vw;
     margin-left: 25%;
@@ -239,12 +244,37 @@ nav{
     margin-left: auto;
     margin-right: auto;
     max-width: 1000px;
+    min-height: 100vh;
 }
 .about__subtitle{
     margin-top: 1rem;
+    padding-left: 1em;
+    align-self: start;
+    grid-area: subtitle;
+    grid-column: 1 / -1;
 }
 .about__body{
-    padding: 0 1em 1em 2em;
+    padding: 0 1em 1em 1em;
+    grid-area: body;
+}
+.about__description:before{
+    content: '';
+    width: 22vw;
+    display: table;
+}
+.about__description{
+    margin: 2em 4em 1em 0;
+}
+.about__description:last-child{
+    margin-bottom: 0;
+}
+.about__img{
+    margin-left: calc(100%/5);
+    box-shadow: var(--boxshad);
+    width: 50vw;
+    margin-left: 25%;
+    margin-right: 25%;
+    grid-area: img;
 }
 
 /* portfolio section */
@@ -381,9 +411,9 @@ aside{
 /* Media Queries */
 @media(min-width: 600px){
     nav{
-        left: 75%;
+        left: 25%;
     }
-        .intro{
+    .intro{
         width: min-content;
         margin: 0 auto;
         display: grid;
@@ -413,40 +443,38 @@ aside{
         left: -2em;
         z-index: -1;
     }
+    /* move the picture to display the picture overlapped with the title/subtitle */
     .aboutme{
         display: grid;
         grid-template-columns: 1fr 200px ;
         grid-template-areas: 
             "title img"
             "subtitle img"
-            "body img";
-        /* width: min-content; */
-        position: relative;
+            "body body";
+    /* position is needed so that the image can shift itself into a new place */
+            position: relative;
     }
     .about__subtitle{
-        grid-area: subtitle;
-        align-self: start;
-        grid-column: 1 / -1;
+        /* position: relative;
+        left: -1em; */
+        /* z-index: -1; */
+        /* this padding & width keeps the text from
+        flowing under the picture which is to its right */
         width: calc(100% + 1em);
-        padding-left: 1em;
         padding-right: calc(200px + 1em);
-        position: relative;
-        left: -1em;
-        z-index: -1;
+        
     }
-    .aboutme img{
-        grid-area: img;
+    .about__img{
+        /* the colored bar of the subtitle should appear
+        just extending beyond the picture */
         position: relative;
-        left: -2em;
-    }
-    .about__body{
-        grid-area: body;
+        left: -4em;
     }
     .about__description{
-        margin: auto 4em 1em 0;
+        /* margin: 2em 4em 1em 0; */
     }
     .about__description:last-child{
-        margin-bottom: 0;
+        /* margin-bottom: 0; */
     }
 }
 
@@ -463,10 +491,15 @@ aside{
     .services__list{
         margin: 0 auto;
         display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
         gap: 2em;
     }
     .service{
         text-align: left;
+        grid-column: 1/-1;
+    }
+    .services__btn{
+        grid-column: 2/3;
     }
     .work__subtitle{
         width: calc(100%-6rem);
@@ -491,6 +524,19 @@ aside{
         width: 60vw;
     }    
 }
+@media (min-width: 1000px) {
+    .services{
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+    .services{
+        min-height: 100vh;
+    }
+    .services__list{
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
 @media (min-width: 1200px) {
     .intro, 
     .services,
@@ -504,6 +550,8 @@ aside{
     }
     .services__list{
         grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+        margin-left: 0;
+        margin-right: 0;
     }
     #service-1{
         grid-column: 2/3;
@@ -519,7 +567,7 @@ aside{
         align-self: end;
  
     }
-    .work, .aboutme{
+    .work{
         min-height: 100vh;
     }
     aside{

@@ -16,7 +16,7 @@ const projectList = [
     {
         portfolioId : "2",
         title: "Monster Dice",
-        tagline: "classes",
+        tagline: "Next-level JavaScript",
         keyPoints: "making use of classes, splitting javascript across files, using randomizers, creating a game-like UX",
         description: `A major focus for this project was generating the javascript to create the little mini-game experience. 
         Fairly early on in my javascript study this was one of the first experiences with creating classes and splitting JS code 
@@ -30,7 +30,7 @@ const projectList = [
     {
         portfolioId : "3", 
         title: "TinDogs",
-        tagline: "Next-level Javascript",
+        tagline: "Next-level JavaScript",
         keyPoints: "event listeners, using timers, leveraging a data file, array methods, class constructors, arrow functions",
         description: `My 8th solo project, this mock "Tinder" for dogs followed a module heavy on arrays and array methods. It introduced using custom positioning attributes for placing the reaction stamps over 
         the dog pictures as well as forcing text to appear on top of the images. This was also my first use of clickable icons. Iterating through an array and displaying array contents
@@ -54,7 +54,7 @@ const projectList = [
     {
         portfolioId : "5", 
         title: "Unit Converter",
-        tagline: "javascript intro",
+        tagline: "Javascript Basics",
         keyPoints: "beginning javascript, template strings, calculations, accepting input, handling button clicks",
         description: `My 4th solo project leveraged techniques for beginning to make websites interactive. A very simple 
         unit converter introduces event listeners, accepting input and dynamically displaying new content 
