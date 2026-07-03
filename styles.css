@@ -491,12 +491,12 @@ aside{
     .interests__list{
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
         gap: 2em;
     }
     .interest{
         text-align: left;
-        grid-column: 1/-1;
+        grid-column: auto;
     }
     .interests__btn{
         grid-column: 2/3;
@@ -560,6 +560,9 @@ aside{
         grid-column: 2/3;
     }
     #interest-3{
+        grid-column: 4/5;
+    }
+    #interest-4{
         grid-column: 4/5;
     }
     .interests__btn{

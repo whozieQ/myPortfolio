@@ -10,7 +10,7 @@ const projectList = [
         sometimes missing data) in a repeating series of movie entries. And of course, storing and retrieving the movie
          list from local storage`,
         image1: "img/portfolio1.jpg",
-        link: "https://whozieq-moviewatchlist.netlify.app/"
+        link: "https://moviewatchlist.whozieq.com/"
 
     },
     {
@@ -24,7 +24,7 @@ const projectList = [
         for different screen sizes and devices.`,
         image1: "img/portfolio2.jpg",
         image2: "img/portfolio2-wide.jpg",
-        link: "https://whozq-rpg.netlify.app/"
+        link: "https://monsterdice.whozieq.com/"
 
     },
     {
@@ -37,12 +37,12 @@ const projectList = [
         is also a pretty new skill at this point.`,
         image1: "img/portfolio3.jpg",
         image2: "img/portfolio3-wide.jpg",
-        link: "https://whozq-tindog.netlify.app/"
+        link: "https://tindogs.whozieq.com/"
 
     },
     {
         portfolioId : "4", 
-        title: "Hometown Homepage",
+        title: "Favorite Places",
         tagline: "CSS & HTML basics",
         keyPoints: "color palettes, styling images, flexbox, classes, background images",
         description: `My 1st solo project concluded a module introducing all of the web dev basics in CSS and HTML. Entirely CSS focused, this project got us introduced to flexbox as we played with several
