@@ -198,8 +198,8 @@ nav{
     margin-bottom: 1em;
 }
 
-/* services section */
-.services{
+/* interests section */
+.interests{
     background-color:var(--color-dark);
     color: var(--color-light);
     background-image: url(img/whozielogo-glasses.png);
@@ -211,12 +211,12 @@ nav{
     text-align: center;
 
 }
-.services__title{
+.interests__title{
     color: var(--color-accent);
     font-weight: var(--fw-bold);
     position: relative;
 }
-.services__title::after{
+.interests__title::after{
     content: '';
     display: block;
     width: 3em;
@@ -225,17 +225,17 @@ nav{
     background: var(--color-light);
     opacity: .3;
 }
-.service__name{
+.interest__name{
     font-size: var(--fs-body);
     letter-spacing: 1px;
     font-weight: var(--fw-bold);
     margin-bottom: .5em;
 }
-.service__description{
+.interest__description{
     font-weight: var(--fw-reg);
     opacity: .7;
 }
-.service{
+.interest{
     margin-bottom: 2em;
 }
 
@@ -488,17 +488,17 @@ aside{
     .intro__img{
         align-self: end;
     }
-    .services__list{
+    .interests__list{
         margin: 0 auto;
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
         gap: 2em;
     }
-    .service{
+    .interest{
         text-align: left;
         grid-column: 1/-1;
     }
-    .services__btn{
+    .interests__btn{
         grid-column: 2/3;
     }
     .work__subtitle{
@@ -525,44 +525,44 @@ aside{
     }    
 }
 @media (min-width: 1000px) {
-    .services{
+    .interests{
         padding-top: 8rem;
         padding-bottom: 8rem;
     }
-    .services{
+    .interests{
         min-height: 100vh;
     }
-    .services__list{
+    .interests__list{
         margin-left: 15%;
         margin-right: 15%;
     }
 }
 @media (min-width: 1200px) {
     .intro, 
-    .services,
+    .interests,
     .aboutme,
     .work{
         padding-top: 8rem;
         padding-bottom: 8rem;
     }
-    .services{
+    .interests{
         min-height: 100vh;
     }
-    .services__list{
+    .interests__list{
         grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
         margin-left: 0;
         margin-right: 0;
     }
-    #service-1{
+    #interest-1{
         grid-column: 2/3;
     }
-    #service-2{
+    #interest-2{
         grid-column: 2/3;
     }
-    #service-3{
+    #interest-3{
         grid-column: 4/5;
     }
-    .services__btn{
+    .interests__btn{
         grid-column: 4/5;
         align-self: end;
  
